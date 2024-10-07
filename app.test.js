@@ -19,9 +19,15 @@ describe("getCLIArgument function tests", () => {
     expect(result).toEqual({ type: "count" });
   });
 
-  it("should return count argument when --count is passed", () => {
-    process.argv.push("--count");
-    const result = getCLIArgument();
-    expect(result).toEqual({ type: "count" });
+  it("should log a message and exit when no valid arguments are passed", () => {
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+    const processExitSpy = jest.spyOn(process, "exit").mockImplementation();
+    getCLIArgument();
+    expect(consoleSpy).toHaveBeenCalledWith(
+      "Use: node app.js --filter=<pattern> /_OR_/ --count"
+    );
+    expect(processExitSpy).toHaveBeenCalledWith(1);
+    consoleSpy.mockRestore();
+    processExitSpy.mockRestore();
   });
 });
