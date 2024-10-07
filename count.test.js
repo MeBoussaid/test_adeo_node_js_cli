@@ -3,7 +3,5 @@ const { countByCountry, countByPerson } = require("./count.js");
 // but here 'real' data is static and included in the repo, so let's use it in the tests too
 const { data } = require("./data/data.js");
 
-describe("count function tests", () => {});
-describe("countPeopleOfACountry function tests", () => {});
-
-describe("countAnimalsOfAPerson function tests", () => {});
+describe("countByPerson function tests", () => {});
+// describe("countByCountry function tests", () => {});
