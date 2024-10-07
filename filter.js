@@ -1,23 +1,9 @@
-const { data } = require("./data.js");
-
-function getFilterPatternFromCLI() {
-  const filterArgument = process.argv.find((argument) =>
-    argument.startsWith("--filter=")
-  );
-  if (!filterArgument) {
-    console.log("Please use: node filter.js --filter=<pattern> ");
-    process.exit(1);
-  }
-
-  return filterArgument.split("=")[1];
-}
-
 function filter(data, pattern) {
   const trimmedPattern = pattern.trim();
 
   if (!trimmedPattern) {
     console.log(
-      "Oops! Invalid pattern: cannot be empty or white spaces. Can you call a dog '   ', or 'White Space' !? "
+      "Oops! Invalid pattern: cannot be empty or white spaces. Can you call a 🐕 '   ' !? "
     );
     return null;
   }
@@ -26,7 +12,7 @@ function filter(data, pattern) {
 
   if (filteredCountries.length === 0) {
     console.log(
-      "No animals found for the given pattern, in the given countries, and given the people that were given ... So try another pattern 🐕"
+      "No animals found for the given pattern ... So, try another pattern 🐾"
     );
     return null;
   }
@@ -72,11 +58,4 @@ function filterAnimalsOfAPerson(animals, pattern) {
   return animals.filter((animal) => animal.name.includes(pattern));
 }
 
-const pattern = getFilterPatternFromCLI();
-const filteredData = filter(data, pattern);
-
-if (filteredData) {
-  console.log(JSON.stringify(filteredData, null, 2));
-} else {
-  process.exit();
-}
+module.exports = { filter };
