@@ -5,7 +5,7 @@ function getFilterPatternFromCLI() {
     argument.startsWith("--filter=")
   );
   if (!filterArgument) {
-    console.log("Use: node filter.js --filter=<pattern>");
+    console.log("Please use: node filter.js --filter=<pattern> ");
     process.exit(1);
   }
 
@@ -16,14 +16,18 @@ function filter(data, pattern) {
   const trimmedPattern = pattern.trim();
 
   if (!trimmedPattern) {
-    console.log("Invalid pattern: cannot be empty or white spaces.");
+    console.log(
+      "Oops! Invalid pattern: cannot be empty or white spaces. Can you call a dog '   ', or 'White Space' !? "
+    );
     return null;
   }
 
   const filteredCountries = filterCountries(data, trimmedPattern);
 
   if (filteredCountries.length === 0) {
-    console.log("No animals found for the given pattern.");
+    console.log(
+      "No animals found for the given pattern, in the given countries, and given the people that were given ... So try another pattern 🐕"
+    );
     return null;
   }
 
