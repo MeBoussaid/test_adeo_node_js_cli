@@ -1,5 +1,17 @@
 const { data } = require("./data.js");
 
+function getFilterPatternFromCLI() {
+  const filterArgument = process.argv.find((argument) =>
+    argument.startsWith("--filter=")
+  );
+  if (!filterArgument) {
+    console.log("Use: node filter.js --filter=<pattern>");
+    process.exit(1);
+  }
+
+  return filterArgument.split("=")[1];
+}
+
 function filter(data, pattern) {
   const trimmedPattern = pattern.trim();
 
@@ -54,18 +66,6 @@ function filterPeopleOfACountry(people, pattern) {
 
 function filterAnimalsOfAPerson(animals, pattern) {
   return animals.filter((animal) => animal.name.includes(pattern));
-}
-
-function getFilterPatternFromCLI() {
-  const filterArgument = process.argv.find((argument) =>
-    argument.startsWith("--filter=")
-  );
-  if (!filterArgument) {
-    console.log("Use: node filter.js --filter=<pattern>");
-    process.exit(1);
-  }
-
-  return filterArgument.split("=")[1];
 }
 
 const pattern = getFilterPatternFromCLI();
