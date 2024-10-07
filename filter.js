@@ -73,4 +73,6 @@ const filteredData = filter(data, pattern);
 
 if (filteredData) {
   console.log(JSON.stringify(filteredData, null, 2));
+} else {
+  process.exit();
 }
