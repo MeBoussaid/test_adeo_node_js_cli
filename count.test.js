@@ -19,6 +19,28 @@ const sampleData = [
       },
     ],
   },
+  {
+    name: "Dillauti Two",
+    people: [
+      {
+        name: "Winifred Graham",
+        animals: [{ name: "Anoa" }, { name: "Duck" }, { name: "Narwhal" }],
+      },
+      {
+        name: "Blanche Viciani",
+        animals: [
+          { name: "Barbet" },
+          { name: "Rhea" },
+          { name: "Snakes" },
+          { name: "Antelope" },
+        ],
+      },
+      {
+        name: "Blanche Viciani Two",
+        animals: [{ name: "Barbet" }],
+      },
+    ],
+  },
 ];
 describe("countByPerson", () => {
   it("Should add the number of animals to each person's name", () => {
@@ -97,6 +119,28 @@ describe("countByCountry", () => {
               { name: "Snakes" },
               { name: "Antelope" },
             ],
+          },
+        ],
+      },
+      {
+        name: "Dillauti Two [3]",
+        people: [
+          {
+            name: "Winifred Graham [3]",
+            animals: [{ name: "Anoa" }, { name: "Duck" }, { name: "Narwhal" }],
+          },
+          {
+            name: "Blanche Viciani [4]",
+            animals: [
+              { name: "Barbet" },
+              { name: "Rhea" },
+              { name: "Snakes" },
+              { name: "Antelope" },
+            ],
+          },
+          {
+            name: "Blanche Viciani Two [1]",
+            animals: [{ name: "Barbet" }],
           },
         ],
       },
