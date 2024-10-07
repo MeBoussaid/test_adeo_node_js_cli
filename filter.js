@@ -4,7 +4,7 @@ function filter(data, pattern) {
   const trimmedPattern = pattern.trim();
 
   if (!trimmedPattern) {
-    console.log("Invalid pattern: thepattern cannot be empty or white spaces.");
+    console.log("Invalid pattern: the pattern cannot be empty or white spaces.");
     return null;
   }
 
