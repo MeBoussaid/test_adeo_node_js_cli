@@ -37,4 +37,8 @@ function runCliApp() {
   }
 }
 
-runCliApp();
+if (require.main === module) {
+  runCliApp();
+}
+
+module.exports = { getCLIArgument, runCliApp };
