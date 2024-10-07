@@ -58,4 +58,9 @@ function filterAnimalsOfAPerson(animals, pattern) {
   return animals.filter((animal) => animal.name.includes(pattern));
 }
 
-module.exports = { filter };
+module.exports = {
+  filter,
+  filterAnimalsOfAPerson,
+  filterPeopleOfACountry,
+  filterCountries,
+};
