@@ -8,6 +8,6 @@ const {
 const { data } = require("./data/data.js");
 
 describe("count function tests", () => {});
-describe("countPeopleOfACountry tests", () => {});
+describe("countPeopleOfACountry function tests", () => {});
 
-describe("countAnimalsOfAPerson tests", () => {});
+describe("countAnimalsOfAPerson function tests", () => {});
