@@ -1,4 +1,4 @@
-# Node.js CLI tool for test :
+# ADEO : Node.js CLI tool:
 
 This a test for ADEO, creating a CLI tool with Node.js
 
@@ -26,7 +26,7 @@ node app.js --count
 
 ```
 
-# To search by pattern:
+# To search by pattern :
 
 ```bash
 
