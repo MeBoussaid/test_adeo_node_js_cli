@@ -4,7 +4,7 @@
   "description": "This a test for ADEO, creating a CLI tool with Node.js",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
