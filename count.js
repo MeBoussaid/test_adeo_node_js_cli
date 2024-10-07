@@ -1,6 +1,6 @@
-function count(countries) {
+function countByCountry(countries) {
   return countries.map((country) => {
-    const countedPeople = countPeopleOfACountry(country.people);
+    const countedPeople = countByPerson(country.people);
 
     return {
       name: `${country.name} [${countedPeople.length}]`,
@@ -9,21 +9,13 @@ function count(countries) {
   });
 }
 
-function countPeopleOfACountry(people) {
+function countByPerson(people) {
   return people.map((person) => {
-    const countedAnimals = countAnimalsOfAPerson(person.animals);
-
     return {
-      name: `${person.name} [${countedAnimals.length}]`,
-      animals: countedAnimals,
+      name: `${person.name} [${person.animals.length}]`,
+      animals: person.animals,
     };
   });
 }
 
-function countAnimalsOfAPerson(animals) {
-  return animals.map((animal) => ({
-    name: animal.name,
-  }));
-}
-
-module.exports = { count, countPeopleOfACountry, countAnimalsOfAPerson };
+module.exports = { countByCountry, countByPerson };

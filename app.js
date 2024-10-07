@@ -1,6 +1,6 @@
 const { data } = require("./data/data.js");
 const { filter } = require("./filter.js");
-const { count } = require("./count.js");
+const { countByCountry } = require("./count.js");
 
 function getCLIArgument() {
   const filterArgument = process.argv.find((argument) =>
@@ -32,7 +32,7 @@ function runCliApp() {
       process.exit();
     }
   } else if (type === "count") {
-    const countedData = count(data);
+    const countedData = countByCountry(data);
     console.log(JSON.stringify(countedData, null, 2));
   }
 }
