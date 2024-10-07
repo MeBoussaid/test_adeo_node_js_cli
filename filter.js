@@ -4,14 +4,14 @@ function filter(data, pattern) {
   const trimmedPattern = pattern.trim();
 
   if (!trimmedPattern) {
-    console.log("Invalid pattern: the pattern cannot be empty or white spaces.");
+    console.log("Invalid pattern: cannot be empty or white spaces.");
     return null;
   }
 
   const filteredCountries = filterCountries(data, trimmedPattern);
 
   if (filteredCountries.length === 0) {
-    console.log("No  animals found for the given pattern.");
+    console.log("No animals found for the given pattern.");
     return null;
   }
 
@@ -56,7 +56,9 @@ function filterAnimalsOfAPerson(animals, pattern) {
   return animals.filter((animal) => animal.name.includes(pattern));
 }
 
-const pattern = " ";
+// const pattern = "hi";
 // const filteredData = filter(data, pattern);
 
-// console.log("filteredData :", filteredData);
+// if (filteredData) {
+//   console.log(JSON.stringify(filteredData, null, 2));
+// }
