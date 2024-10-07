@@ -56,9 +56,21 @@ function filterAnimalsOfAPerson(animals, pattern) {
   return animals.filter((animal) => animal.name.includes(pattern));
 }
 
-// const pattern = "hi";
-// const filteredData = filter(data, pattern);
+function getFilterPatternFromCLI() {
+  const filterArgument = process.argv.find((argument) =>
+    argument.startsWith("--filter=")
+  );
+  if (!filterArgument) {
+    console.log("Use: node filter.js --filter=<pattern>");
+    process.exit(1);
+  }
 
-// if (filteredData) {
-//   console.log(JSON.stringify(filteredData, null, 2));
-// }
+  return filterArgument.split("=")[1];
+}
+
+const pattern = getFilterPatternFromCLI();
+const filteredData = filter(data, pattern);
+
+if (filteredData) {
+  console.log(JSON.stringify(filteredData, null, 2));
+}
