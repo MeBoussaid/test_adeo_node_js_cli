@@ -26,4 +26,4 @@ function countAnimalsOfAPerson(animals) {
   }));
 }
 
-module.exports = { count };
+module.exports = { count, countPeopleOfACountry, countAnimalsOfAPerson };
