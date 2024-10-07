@@ -57,7 +57,13 @@ describe("filter function tests", () => {
   });
 });
 describe("filterAnimalsOfAPerson function tests", () => {
-  const animals = [{ name: "Cat" }, { name: "Leopard" }, { name: "Fish" }];
+  const animals = [
+    { name: "Wox" },
+    { name: "Cat" },
+    { name: "Leopard" },
+    { name: "Fish" },
+    { name: "Fox" },
+  ];
   it("should return animals that match the given pattern", () => {
     const pattern = "eo";
     const result = filterAnimalsOfAPerson(animals, pattern);
@@ -74,6 +80,12 @@ describe("filterAnimalsOfAPerson function tests", () => {
     const pattern = "bobo";
     const result = filterAnimalsOfAPerson(animals, pattern);
     expect(result).toEqual([]);
+  });
+
+  it("should return only animals containing the pattern while keeping the order intact", () => {
+    const pattern = "x";
+    const result = filterAnimalsOfAPerson(animals, pattern);
+    expect(result).toEqual([{ name: "Wox" }, { name: "Fox" }]);
   });
 });
 
