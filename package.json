@@ -1,0 +1,11 @@
+{
+  "name": "test_adeo_node_js_cli",
+  "version": "1.0.0",
+  "description": "This a test for ADEO, creating a CLI tool with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
