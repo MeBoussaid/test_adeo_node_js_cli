@@ -7,6 +7,55 @@ const {
 
 const { sampleData } = require("./_fixtures.js");
 
+describe("filter function tests", () => {
+  it("should filter countries, people, and animals based on the given pattern", () => {
+    const pattern = "Anoa";
+    const result = filter(sampleData, pattern);
+
+    expect(result).toEqual([
+      {
+        name: "Dillauti",
+        people: [
+          {
+            name: "Winifred Graham",
+            animals: [{ name: "Anoa" }],
+          },
+        ],
+      },
+      {
+        name: "Dillauti Two",
+        people: [
+          {
+            name: "Winifred Graham",
+            animals: [{ name: "Anoa" }],
+          },
+        ],
+      },
+    ]);
+  });
+
+  it("should return null and log a message if the pattern is empty or whitespace", () => {
+    const pattern = "    ";
+    const consoleSpy = jest.spyOn(console, "log");
+    const result = filter(sampleData, pattern);
+    expect(result).toBeNull();
+    expect(consoleSpy).toHaveBeenCalledWith(
+      "Oops! Invalid pattern: cannot be empty or white spaces. Can you call a 🐕 '   ' !?"
+    );
+    consoleSpy.mockRestore();
+  });
+
+  it("should return null and log a message if no animals match the pattern", () => {
+    const pattern = "ige";
+    const consoleSpy = jest.spyOn(console, "log");
+    const result = filter(sampleData, pattern);
+    expect(result).toBeNull();
+    expect(consoleSpy).toHaveBeenCalledWith(
+      "No animals found for the given pattern ... So, try another pattern 🐾"
+    );
+    consoleSpy.mockRestore();
+  });
+});
 describe("filterAnimalsOfAPerson function tests", () => {
   const animals = [{ name: "Cat" }, { name: "Leopard" }, { name: "Fish" }];
   it("should return animals that match the given pattern", () => {

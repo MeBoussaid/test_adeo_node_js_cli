@@ -3,7 +3,7 @@ function filter(data, pattern) {
 
   if (!trimmedPattern) {
     console.log(
-      "Oops! Invalid pattern: cannot be empty or white spaces. Can you call a 🐕 '   ' !? "
+      "Oops! Invalid pattern: cannot be empty or white spaces. Can you call a 🐕 '   ' !?"
     );
     return null;
   }
