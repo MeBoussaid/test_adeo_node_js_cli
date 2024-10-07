@@ -42,7 +42,7 @@ const sampleData = [
     ],
   },
 ];
-describe("countByPerson", () => {
+describe("countByPerson function test", () => {
   it("Should add the number of animals to each person's name", () => {
     const somePeople = [
       {
@@ -99,7 +99,7 @@ describe("countByPerson", () => {
     ]);
   });
 });
-describe("countByCountry", () => {
+describe("countByCountry function test", () => {
   it("should add the number of people in each country's name and the number of animals for each person", () => {
     const result = countByCountry(sampleData);
 
